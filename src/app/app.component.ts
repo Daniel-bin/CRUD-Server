@@ -28,12 +28,19 @@ export class AppComponent {
   }
 
   addToRentalList(movie: Movie) {
-    console.log("Movie:" + movie);
-    this.rentalListService.addRenatlList(movie);
-    this.getRentalList();
+    console.log("Movie:" + movie.title);
+    this.rentalList$ = this.rentalListService
+      .addRenatlList(movie)
+      .subscribe(() => {
+        this.getRentalList();
+      });
   }
 
   deleteRentalList(id: number) {
-    this.rentalListService.deleteRenatlList(id);
+    this.rentalList$ = this.rentalListService
+      .deleteRenatlList(id)
+      .subscribe(() => {
+        this.getRentalList();
+      });
   }
 }

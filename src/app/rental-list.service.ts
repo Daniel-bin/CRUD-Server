@@ -13,10 +13,6 @@ export class RentalListService {
     return this.http.get("http://localhost:3000/rentalList");
   }
 
-  private setMovies() {
-    this.getRentalList().subscribe((items: Movie[]) => (this.movies = items));
-  }
-
   addRenatlList(movie: Movie) {
     return this.http.post("http://localhost:3000/rentalList/", {
       title: movie.title,

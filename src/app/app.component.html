@@ -17,7 +17,7 @@
 	<b>Movies to Rent</b>
 	<div class="movie-panels" style="flex-wrap:wrap">
 
-		<my-movie-tile *ngFor="let flop of flops$ | async" class="mb-2" (rent)="addToRentalList(movie)" [movie]="flop">
+		<my-movie-tile *ngFor="let flop of flops$ | async" class="mb-2" (rent)="addToRentalList(flop)" [movie]="flop">
 		</my-movie-tile>
 
 

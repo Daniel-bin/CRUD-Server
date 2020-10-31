@@ -1,12 +1,12 @@
 <div class="card-body text-dark" style="padding:0">
 	<h6>Rentals
-		<span *ngIf="rentalList$.length" class="badge badge-secondary">
-      {{rentalList.length}}</span>
+		<span class="badge badge-secondary">
+      {{rentalList$.length}}</span>
 
 	</h6>
-	<div *ngIf="rentalList">
-		<div *ngFor="let flop of rentalList$" style="font-size:12px">{{flop.title}}
-			<i (click)="onDelete(flop.id)" class="material-icons">delete: {{flop.title}}</i>
+	<div *ngIf="rentalList$">
+		<div *ngFor="let flop of rentalList$ | async" style="font-size:12px">{{flop.title}}
+			<i (click)="onDelete(flop.id)" class="material-icons">Delete</i>
 		</div>
 	</div>
 </div>

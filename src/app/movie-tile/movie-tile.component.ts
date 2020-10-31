@@ -14,7 +14,7 @@ export class MovieTileComponent {
   ngOnInit() {}
 
   onRentClicked() {
-    console.log("movie rented:" + this.movie);
+    console.log("movie rented:" + this.movie.title);
     this.rent.emit(this.movie);
   }
 }
