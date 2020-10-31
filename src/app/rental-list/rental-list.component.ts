@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
   styles: ["h6 { color: red }", "i { cursor: pointer }"]
 })
 export class RentalListComponent {
-  @Input() rentalList;
+  @Input() rentalList$;
   @Output() delete = new EventEmitter();
 
   onDelete(flopId) {

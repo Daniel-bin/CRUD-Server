@@ -11,7 +11,7 @@ import { RentalListService } from "./rental-list.service";
 })
 export class AppComponent {
   flops$;
-  rentalList;
+  rentalList$;
 
   constructor(
     private movieService: MovieService,
@@ -24,11 +24,12 @@ export class AppComponent {
   }
 
   getRentalList() {
-    this.rentalList = this.rentalListService.getRentalList().subscribe();
+    this.rentalList$ = this.rentalListService.getRentalList();
   }
 
   addToRentalList(movie: Movie) {
-    this.rentalListService.addRenatlList(movie).subscribe();
+    console.log("Movie:" + movie);
+    this.rentalListService.addRenatlList(movie);
     this.getRentalList();
   }
 
