@@ -18,16 +18,13 @@ export class RentalListService {
   }
 
   addRenatlList(movie: Movie) {
-    this.setMovies();    
-    if (!this.movies || !this.movies.find(x => x.id == movie.id)) {
-      return this.http.post("http://localhost:3000/rentalList/", {
-        title: movie.title,
-        year: movie.year,
-        stars: movie.stars,
-        rating: movie.rating,
-        onSale: movie.onSale
-      });
-    }
+    return this.http.post("http://localhost:3000/rentalList/", {
+      title: movie.title,
+      year: movie.year,
+      stars: movie.stars,
+      rating: movie.rating,
+      onSale: movie.onSale
+    });
   }
 
   deleteRenatlList(id: number) {

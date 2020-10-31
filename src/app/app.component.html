@@ -9,7 +9,7 @@
 
 
 		<div class="card p-2 col-6">
-			<my-rental-list [rentalList$]="rentalList$"></my-rental-list>
+			<my-rental-list (delete)="deleteRentalList(id)" [rentalList]="rentalList"></my-rental-list>
 		</div>
 
 	</div>

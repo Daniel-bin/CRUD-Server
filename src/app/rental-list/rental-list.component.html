@@ -4,9 +4,9 @@
       {{rentalList.length}}</span>
 
 	</h6>
-	<div *ngFor="let flop of rentalList$ | async" style="font-size:12px">{{flop.title}}
+	<div *ngFor="let flop of rentalList | async" style="font-size:12px">{{flop.title}}
 		<i
       (click)="onDelete(flop.id)"
-      class="material-icons">delete</i>
+      class="material-icons">delete: {{flop.title}}</i>
 	</div>
 </div>
