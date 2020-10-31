@@ -1,12 +1,12 @@
 <div class="card-body text-dark" style="padding:0">
 	<h6>Rentals
 		<span class="badge badge-secondary">
-      {{rentalList$.length}}</span>
+      {{(rentalList$ | async)?.length}}</span>
 
 	</h6>
 	<div *ngIf="rentalList$">
-		<div *ngFor="let flop of rentalList$ | async" style="font-size:12px">{{flop.title}}
-			<i (click)="onDelete(flop.id)" class="material-icons">Delete</i>
+		<div *ngFor="let flop of rentalList$ | async" style="font-size:12px">
+			<i (click)="onDelete(flop.id)" class="material-icons">delete</i>{{flop.title}}
 		</div>
 	</div>
 </div>

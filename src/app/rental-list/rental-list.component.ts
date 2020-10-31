@@ -10,6 +10,7 @@ export class RentalListComponent {
   @Output() delete = new EventEmitter();
 
   onDelete(flopId) {
+    console.log("Delete id: " + flopId);
     this.delete.emit(flopId);
   }
 }
